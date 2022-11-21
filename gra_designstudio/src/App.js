@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Homepage from './components/Homepage'
 
 function App() {
   return (
@@ -6,10 +7,19 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <h1>Estou na pag default</h1>
+            <Homepage />
           </Route>
-          <Route path="/ola">
-            <h1>Estou no /ola</h1>
+          <Route path="/works">
+            <h1>Estou no /works</h1>
+          </Route>
+          <Route path="/works/:id">
+            <h1>Estou no /works/id</h1>
+          </Route>
+          <Route path="/about">
+            <h1>Estou no /about</h1>
+          </Route>
+          <Route path="/contacts">
+            <h1>Estou no /contacts</h1>
           </Route>
           <Route path="*">
             <h1>404</h1>
