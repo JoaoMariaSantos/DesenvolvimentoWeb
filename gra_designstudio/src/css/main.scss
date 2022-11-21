@@ -1,4 +1,4 @@
-@import "./config";
+@import './config';
 
 * {
     margin: 0;
@@ -9,3 +9,5 @@
 body {
     font-family: $headings;
 }
+
+@import './components/loading';

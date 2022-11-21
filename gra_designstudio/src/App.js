@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Homepage from './components/Homepage'
+import Loading from './components/Loading'
+
+import './css/main.css';
 
 function App() {
   return (
@@ -7,7 +10,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <Homepage />
+            <Loading />
           </Route>
           <Route path="/works">
             <h1>Estou no /works</h1>
@@ -22,7 +25,7 @@ function App() {
             <h1>Estou no /contacts</h1>
           </Route>
           <Route path="*">
-            <h1>404</h1>
+            <Loading />
           </Route>
         </Switch>
       </div>
