@@ -1,5 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Cantata+One");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Cantata One";
 }/*# sourceMappingURL=main.css.map */
