@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 const Loading = () => {
     useEffect(() => {
@@ -21,11 +21,13 @@ function addBlock(element){
     const span = document.createElement('span');
     span.innerHTML = 'grä';
 
-    const randValue = Math.floor(Math.random() * 10);
-    if(randValue > 5){
-        if(randValue == 6){
-            span.classList.add
-        }
+    const randValue = Math.floor(Math.random() * 15);
+    if(randValue == 1){
+        span.classList.add('text--red');
+    } else if(randValue == 2){
+        span.classList.add('text--green');
+    } else if(randValue == 3){
+        span.classList.add('text--blue');
     }
 
     block.append(span);

@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/loading">
             <Loading />
           </Route>
           <Route path="/works">
@@ -25,7 +25,7 @@ function App() {
             <h1>Estou no /contacts</h1>
           </Route>
           <Route path="*">
-            <Loading />
+          <h1>404</h1>
           </Route>
         </Switch>
       </div>
