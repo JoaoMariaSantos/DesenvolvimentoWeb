@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Cantata+One");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+.text--white {
+  color: #F6F6F4;
+}
+.text--black--color {
+ color: black; 
+}
 .text--red {
   color: #f53d4c;
 }
@@ -44,12 +51,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /*margin-left: .75%;*/
 }
 
 body {
   font-family: "Cantata One";
 }
-
+h2 {
+  font-size: 3vh;
+}
 #loading {
   position: absolute;
   width: 100vw;
