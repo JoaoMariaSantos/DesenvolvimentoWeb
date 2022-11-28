@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Cantata+One");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
-
-.text--white {
-  color: #F6F6F4;
-}
-.text--black--color {
- color: black; 
-}
 .text--red {
   color: #f53d4c;
 }
@@ -51,15 +44,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /*margin-left: .75%;*/
 }
 
 body {
   font-family: "Cantata One";
 }
-h2 {
-  font-size: 3vh;
-}
+
 #loading {
   position: absolute;
   width: 100vw;
@@ -77,4 +67,156 @@ h2 {
 #loading div div span {
   font-size: 3vh;
   text-align: center;
+}
+
+body {
+  overflow: hidden;
+}
+
+/*TROCAR PELO HEADER*/
+h3 {
+  margin-top: 2vh;
+  text-align: center;
+}
+
+h1 {
+  font-size: 20vh;
+}
+
+h2 {
+  font-size: 4.25vh;
+}
+
+.mainText {
+  margin-top: 20vh;
+  display: grid;
+  /* width: 100%; */
+  /*height: 100%; */
+  /**background-color: red;*/
+  -moz-column-count: 12;
+       column-count: 12;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+/*
+.mainText h1 {
+    column-count: 4;
+}
+*/
+.mainText h2 {
+  -moz-column-count: 1;
+       column-count: 1;
+  line-height: 1.4;
+}
+
+/*
+.figure h3 {
+    width: fit-content;
+}
+
+.figure * {
+    position: absolute;
+    width: auto;
+    align-items: center;
+}
+
+.figure {
+    position: relative;
+}
+
+.divFigure, .divFigure1, .divFigure2 {
+    width:98px;
+    height: 98px;
+    margin: 2px;
+}
+.divFigure1 h3 {
+       transform: translateX(50%);
+
+}
+*/
+.divFigure {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  /* position: absolute;*/
+}
+
+.divFigure div h3,
+.divFigure1 div h3,
+.divFigure2 div h3 {
+  margin: 0;
+  position: absolute;
+  transform: translateY(-72px);
+  width: auto;
+}
+
+.divFigure a,
+.divFigure1 a,
+.divFigure2 a {
+  color: #f6f6f4;
+}
+
+.divFigure1 div h3 {
+  transform: translate(205%, -477%);
+}
+
+.divFigure1 {
+  transform: translateY(-60%);
+}
+
+.divFigure2 {
+  transform: translateY(-120%);
+}
+
+.divFigure2 div h3 {
+  transform: translate(80%, -477%);
+}
+
+.buttonsArea {
+  position: absolute;
+  left: 48%;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+canvas {
+  position: absolute;
+}
+
+.backgroundGoesWhite {
+  background-color: white;
+}
+
+.artRelatedActions {
+  display: flex;
+  position: fixed;
+  font-size: 0.85em;
+  bottom: 5vh;
+  right: 1.75vw;
+  height: 3em;
+}
+
+.canvasRelated {
+  height: 3em;
+  width: auto;
+  padding: 0 2em 0 2em;
+  margin: 1.2vw;
+  background: none;
+}
+
+.canvasRelated:hover {
+  height: 3.2em;
+  width: auto;
+  font-size: 1em;
+  box-shadow: 0 8px 6px -6px rgb(22, 22, 22);
+}
+
+.homepage__title {
+  font-size: 20px;
 }/*# sourceMappingURL=main.css.map */

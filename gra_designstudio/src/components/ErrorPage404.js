@@ -1,6 +1,5 @@
 //DRAW CODE ADAPTED FROM: https://github.com/recraftrelic/canvas-draw-app/blob/master/src/App.js
 import React, { useCallback } from 'react'
-import '../css/main.css'
 
 import circle from './Figures_SVG/Ellipse.svg'
 import Figure from './Figures_SVG/Figure'
@@ -16,10 +15,10 @@ import { Link } from 'react-router-dom'
 const ErrorPage404 = () => {
 
   const refCanvas = useRef(null)
-  const refContext = useRef(null)
+  // const refContext = useRef(null)
   const context = useRef(null)
 
-  const [isDrawing, setIsDrawing] = useState(false); {/* mouseDown*/ }
+  const [isDrawing, setIsDrawing] = useState(false); // mouseDown
   const [previousPosition, setPosition] = useState({
     x: 0,
     y: 0
@@ -36,9 +35,9 @@ const ErrorPage404 = () => {
     if (!isDrawing) {
       return
     } else {
-  
-     {/*} context.current.globalCompositeOperation = "destination-over"
-    context.fillStyle = 'blue' */}
+
+      // context.current.globalCompositeOperation = "destination-over"
+      // context.fillStyle = 'blue' 
       context.current.beginPath();
       context.lineCap = "round"
       context.current.strokeStyle = "black"
@@ -75,13 +74,13 @@ const ErrorPage404 = () => {
     context.current.clearRect(0, 0, context.current.canvas.width, context.current.canvas.height)
   }
   const saveImage = async () => {
-   {/* context.current.fillStyle = "white";
-     context.className("backgroundGoesWhite")
- */}
- {/* não está a guardar com fundo
- context.current.globalCompositeOperation = "destination-over"
- context.current.canvas.style.backgroundColor = "white"
-*/}
+    // context.current.fillStyle = "white";
+    //  context.className("backgroundGoesWhite")
+
+    // não está a guardar com fundo
+    // context.current.globalCompositeOperation = "destination-over"
+    // context.current.canvas.style.backgroundColor = "white"
+
     const image = refCanvas.current.toDataURL('My_GRA_Art/jpeg');
     const blob = await (await fetch(image)).blob();
     const blobURL = URL.createObjectURL(blob);
@@ -119,17 +118,17 @@ const ErrorPage404 = () => {
 
       <div className='buttonsArea'>
         <div className='divFigure'>
-          <Link to="/loading"> {/* Homepage*/}
+          <Link to="/homepage"> {/* Homepage*/}
             <Figure path={circle} text='Click me!' />
           </Link>
         </div>
         <div className='divFigure1'>
-          <Link to="/loading"> {/* Homepage*/}
+          <Link to="/homepage"> {/* Homepage*/}
             <Figure path={decaedro} text='Me!' />
           </Link>
         </div>
         <div className='divFigure2'>
-          <Link to="/loading"> {/* Homepage*/}
+          <Link to="/homepage"> {/* Homepage*/}
             <Figure path={rect} text='Or me!' />
           </Link>
         </div>

@@ -4,17 +4,15 @@ import Loading from './components/Loading'
 import ErrorPage404 from './components/ErrorPage404'
 import './css/main.css';
 
-/*import CanvasDraw from "react-canvas-draw";
-*/
-
-import './css/components/_ErrorPage404.css'
-
 function App() {
   return (
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/loading">
+          <Route exact path="/homepage">
+            <Homepage />
+          </Route>
+          <Route path="/loading">
             <Loading />
           </Route>
           <Route path="/works">

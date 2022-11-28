@@ -78,6 +78,12 @@ h2 {
     width: auto;
 }
 
+.divFigure a,
+.divFigure1 a,
+.divFigure2 a {
+    color: $white;
+}
+
 .divFigure1 div h3 {
     transform: translate(205%, -477%);
 }
