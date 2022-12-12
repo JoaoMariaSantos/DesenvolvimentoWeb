@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Homepage from './components/Homepage'
 import Loading from './components/Loading'
 import ErrorPage404 from './components/ErrorPage404'
-import './css/main.css';
+import WorkPage from './components/WorkPage';
+import WorksPage from './components/WorksPage';
 
 function App() {
   return (
@@ -16,10 +17,10 @@ function App() {
             <Loading />
           </Route>
           <Route path="/works">
-            <h1>Estou no /works</h1>
+            <WorksPage />
           </Route>
-          <Route path="/works/:id">
-            <h1>Estou no /works/id</h1>
+          <Route path="/work/:id">
+            <WorkPage />
           </Route>
           <Route path="/about">
             <h1>Estou no /about</h1>
@@ -28,7 +29,7 @@ function App() {
             <h1>Estou no /contacts</h1>
           </Route>
           <Route path="*">
-          <ErrorPage404 />
+            <ErrorPage404 />
           </Route>
         </Switch>
       </div>
