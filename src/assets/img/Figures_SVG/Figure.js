@@ -1,8 +1,6 @@
 import React from 'react'
 
 const Figure = (props) => {
-    console.log("Estou dentro da Homepage")
-
     return (
         <div className='figure text--white text--regular'>
             <img src={props.path} alt=""/>

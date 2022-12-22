@@ -4,10 +4,6 @@ const Homepage = () => {
 
   return (
     <div>
-      <div className='homepage'>
-        <h1 className='homepage__title' >Grä</h1>
-      </div>
-
       <main>
         <div id='main__background' onClick={addProject}></div>
         <div id='homepage__projects'>
@@ -48,7 +44,6 @@ function addProject() {
 function getClipPath() {
   const clipPathOptions = [
     'polygon(50% 0%, 0% 100%, 100% 100%)',
-    'ellipse(25% 49% at 50% 50%);',
     'circle(50% at 50% 50%)',
     'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
     'polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%)',

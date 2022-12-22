@@ -3,28 +3,32 @@ import { useParams } from 'react-router-dom'
 import { API_URL } from '../api/api';
 
 const WorkPage = () => {
-    const [projects, setProjects] = useState()
+    const [project, setProject] = useState()
+    const { id } = useParams();
 
-	const fetchProjects = async(category = '') => {
-		await fetch(API_URL + 'projects')
+	const fetchProject = async(category = '') => {
+		await fetch(API_URL + 'projects/' + id)
 				.then(response => response.json())
 				.then(result => {
                     
-                    setProjects(result)
+                    setProject(result)
 				});
 	}
 
 	useEffect(() => {
-		fetchProjects();
+		fetchProject();
 	}, [])
-
-    const { id } = useParams();
-
-    console.log(projects)
 
     return (
         <div>
-            <p>Ola - {id}</p>
+            {project && 
+            <div>
+                <p>{project.slug}</p>
+                <img src={project.acf.image_0.url} alt="sup" />
+                <img src={project.acf.image_1.url} alt="sup" />
+                <img src={project.acf.image_1.url} alt="sup" />
+            </div>
+            }
         </div>
     )
 }
