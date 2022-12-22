@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/homepage">
+          <Route exact path="/">
             <Homepage />
           </Route>
           <Route path="/loading">

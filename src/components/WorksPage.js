@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const WorksPage = () => {
+    const [projects, setProjects] = useState();
+
     useEffect(() => {
         fetch('http://localhost:8000/projects')
             .then(res => {
@@ -9,6 +11,7 @@ const WorksPage = () => {
             })
             .then(data => {
                 console.log(data)
+                setProjects(data)
             })
             .catch(err => {
                 console.log(err.message)
@@ -18,7 +21,9 @@ const WorksPage = () => {
     return (
         <div>
             <p>Estou na página dos trabalhos todos</p>
-            <Link to="/works/fafafafa">Homepage</Link>
+            {projects && projects.map(project => {
+                return <Link to={`/work/${project.id}`}>{project.title}</Link>
+            })}
         </div>
     )
 }

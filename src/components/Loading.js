@@ -22,11 +22,11 @@ function addBlock(element){
     span.innerHTML = 'grä';
 
     const randValue = Math.floor(Math.random() * 15);
-    if(randValue == 1){
+    if(randValue === 1){
         span.classList.add('text--red');
-    } else if(randValue == 2){
+    } else if(randValue === 2){
         span.classList.add('text--green');
-    } else if(randValue == 3){
+    } else if(randValue === 3){
         span.classList.add('text--blue');
     }
 
