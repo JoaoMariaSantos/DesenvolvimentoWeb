@@ -5,6 +5,11 @@ import ErrorPage404 from './components/ErrorPage404'
 import WorkPage from './components/WorkPage';
 import WorksPage from './components/WorksPage';
 
+import Buttons404 from './components/assets/Buttons404'
+import HeaderComponent from './components/assets/Header';
+import './css/main.css';
+// import './css/components/_ErrorPage404.scss';
+
 function App() {
   return (
     <Router>
