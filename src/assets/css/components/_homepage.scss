@@ -19,7 +19,7 @@ $pickedColor: nth($colors, $key);
 main {
     position: relative;
     display: block;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 110px);
 
     #homepage__projects {
         width: 100%;

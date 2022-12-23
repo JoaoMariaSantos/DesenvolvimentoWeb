@@ -20,7 +20,7 @@ const WorkPage = () => {
 	}, [])
 
     return (
-        <div>
+        <div className='workpage'>
             {project && 
             <div>
                 <p>{project.slug}</p>

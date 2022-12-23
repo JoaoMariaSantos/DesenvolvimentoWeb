@@ -53,9 +53,10 @@ const ErrorPage404 = () => {
 
 
   const onMouseDown = (e) => {
+    let y = e.pageY - 80
     setPosition({
       x: e.pageX,
-      y: e.pageY
+      y: y
     })
     setIsDrawing(true)
   }
@@ -64,7 +65,8 @@ const ErrorPage404 = () => {
     setIsDrawing(false)
   }
   const onMouseMove = (e) => {
-    draw(e.pageX, e.pageY)
+    let y = e.pageY - 80
+    draw(e.pageX, y)
   }
 
 
@@ -82,7 +84,7 @@ const ErrorPage404 = () => {
   }
 
 
-  console.log(isDrawing, previousPosition)
+  // console.log(isDrawing, previousPosition)
   return (
 
 
