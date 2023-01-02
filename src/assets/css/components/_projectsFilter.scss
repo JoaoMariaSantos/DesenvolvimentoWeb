@@ -1,0 +1,111 @@
+.projectfilter {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+        font-weight: 300;
+    }
+
+    // HEADER -----------------------------------------------
+
+    &__header {
+        display: none;
+    }
+
+    &__unordered-list {
+        position: relative;
+        display: flex;
+        flex: 1 1 auto;
+        list-style-type: none;
+
+        li:not(:last-child) {
+            margin-right: 40px;
+        }
+
+        li {
+            border: 2px solid transparent;
+            border-radius: 5px;
+            padding: 10px;
+            transition: background 0.1s;
+
+            &:hover {
+                .projectfilter__list-options {
+                    visibility: visible;
+                    opacity: 1;
+                    box-shadow: 0px 3px 5px 2px #EBECF1;
+                }
+            }
+        }
+    }
+
+    &__list-options {
+        visibility: hidden;
+        opacity: 1;
+        background: $white;
+        position: absolute;
+        display: block;
+        margin: 12px -12px;
+        padding: 0;
+        list-style-type: none;
+        transition: opacity 0.2s, visibility 0.2s;
+
+        li {
+            margin: -2px 0 0 -2px;
+            width: 150px;
+            line-height: 1.7;
+            color: grey;
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
+
+    @keyframes slide-in {
+        0% {
+            top: -50px;
+        }
+
+        40% {
+            top: 20px;
+        }
+
+        70% {
+            top: 10px;
+        }
+
+        100% {
+            top: 15px;
+        }
+    }
+
+
+    // SIDEBAR -----------------------------------------------
+
+    &__sidebar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .projectfilter {
+        &__header {
+            display: inline-block;
+        }
+
+        &__sidebar {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .projectfilter {
+        &__sidebar {
+            display: inline-block;
+        }
+    }
+}
