@@ -5,6 +5,7 @@ import ErrorPage404 from './components/ErrorPage404'
 import WorkPage from './components/WorkPage';
 import WorksPage from './components/WorksPage';
 import { Header } from './components/Header';
+import About from './components/About';
 
 function App() {
   return (
@@ -24,8 +25,9 @@ function App() {
           <Route path="/work/:id">
             <WorkPage />
           </Route>
-          <Route path="/about">
-            <h1>Estou no /about</h1>
+          <Route path="/About">
+            {/* <h1>Estou no /about</h1> */}
+            <About/>
           </Route>
           <Route path="/contacts">
             <h1>Estou no /contacts</h1>

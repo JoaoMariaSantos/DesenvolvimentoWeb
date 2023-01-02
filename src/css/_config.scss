@@ -66,25 +66,4 @@ $body: 'Noto Sans';
     &--black {
         font-weight: 900;
     }
-
-    &--paragraph,
-    &--headings {
-        font-size: 5vh; //42px;
-    }
-
-    @media screen and (max-width:600px) {//600 900
-        &--paragraph,
-        p {
-            // font-size: 2.15vh; //42px;
-            font-size: 16px;
-        }
-
-        &--headings,
-        h1 {
-            // font-size: 2.99;
-            // font-size: calc((100vh - 2.99rem) / 29);
-            // font-size: 1.59rem;
-            font-size: 32px;
-        }
-    }
 }

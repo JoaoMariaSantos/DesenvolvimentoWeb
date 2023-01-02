@@ -17,7 +17,7 @@ export const Header = () => {
             <div className='menu'>
                 <ul className='menu-list'>
                     <li><a className='menulink' href="/contacts">Contact</a></li>
-                    <li><a className='menulink' href="/about">About</a></li>
+                    <li><a className='menulink' href="/About">About</a></li>
                     <li><a className='menulink' href="/works">Works</a></li>
                 </ul>
             </div>
