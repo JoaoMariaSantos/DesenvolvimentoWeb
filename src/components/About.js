@@ -7,7 +7,7 @@ const About = () => {
     return (
         <div id='aboutPage'>
             <div>
-                <h2 className="about__title text--headings">Who are we?</h2>
+                <h2 className="about__title text--headings text--underline">Who are we?</h2>
                 <div className="about__all-text">
                     <div className="about__maintext__container">
                         <p className="about__text text--paragraph">Grä was created in 2022 by <span className='ines text--green'>Inês</span>,

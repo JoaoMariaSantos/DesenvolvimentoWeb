@@ -15,6 +15,11 @@ $headings: 'Cantata One';
 $body: 'Noto Sans';
 
 .text {
+    &--underline {
+        text-decoration: underline solid black 2px;
+        text-underline-offset: 20px;
+    }
+
     &--red {
         color: $red;
     }
@@ -69,11 +74,17 @@ $body: 'Noto Sans';
 
     &--paragraph,
     &--headings {
-        font-size: 5vh; //42px;
+        font-size: 42px; //5vh; //42px;
     }
 
-    @media screen and (max-width:600px) {//600 900
-        &--paragraph,
+    &--paragraph--small {
+        font-size: 22px;
+    }
+
+    @media screen and (max-width:600px) {
+
+        //600 900
+        &--paragraph,  &--paragraph--small,
         p {
             // font-size: 2.15vh; //42px;
             font-size: 16px;

@@ -6,6 +6,7 @@ import WorkPage from './components/WorkPage';
 import WorksPage from './components/WorksPage';
 import { Header } from './components/Header';
 import About from './components/About';
+import Contacts from './components/Contacts';
 
 function App() {
   return (
@@ -26,11 +27,10 @@ function App() {
             <WorkPage />
           </Route>
           <Route path="/About">
-            {/* <h1>Estou no /about</h1> */}
             <About/>
           </Route>
           <Route path="/contacts">
-            <h1>Estou no /contacts</h1>
+            <Contacts/>
           </Route>
           <Route path="*">
             <ErrorPage404 />
