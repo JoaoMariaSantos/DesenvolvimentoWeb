@@ -1,6 +1,3 @@
-import React, { useEffect } from 'react'
-import decaedro from '../assets/img/Figures_SVG/decaedro.svg'
-
 const About = () => {
 
 
@@ -42,12 +39,12 @@ const About = () => {
     )
 }
 // MOBILE
-// --> TO MOVE THE PROFILE FIGURES BEFORE THE 2ND PARAGRAPH OF TEXT
+// --> TODO: TO MOVE THE PROFILE FIGURES BEFORE THE 2ND PARAGRAPH OF TEXT
 window.addEventListener("resize", () => {
     let motherContainer = document.querySelector('.about__all-text')
     let profileImgs = document.querySelector('.about__figures')
     let parentDiv = document.querySelector('.about__maintext__container')
-    let afterElement = parentDiv.lastChild
+    let afterElement = parentDiv.lastChild()
 
     const mediaQuery = window.matchMedia('(max-width: 600px)')
     if (mediaQuery.matches) {

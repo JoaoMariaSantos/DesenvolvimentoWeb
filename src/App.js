@@ -13,23 +13,22 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/DesenvolvimentoWeb/">
             <Homepage />
           </Route>
-          <Route path="/loading">
+          <Route path="/DesenvolvimentoWeb/loading">
             <Loading />
           </Route>
-          <Route path="/works">
+          <Route path="/DesenvolvimentoWeb/works">
             <WorksPage />
           </Route>
-          <Route path="/work/:id">
+          <Route path="/DesenvolvimentoWeb/work/:id">
             <WorkPage />
           </Route>
-          <Route path="/About">
-            {/* <h1>Estou no /about</h1> */}
+          <Route path="/DesenvolvimentoWeb/about">
             <About/>
           </Route>
-          <Route path="/contacts">
+          <Route path="/DesenvolvimentoWeb/contacts">
             <h1>Estou no /contacts</h1>
           </Route>
           <Route path="*">

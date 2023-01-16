@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState} from 'react'
+// import React, {useRef, useEffect, useState} from 'react'
 
 import circle from '../assets/img/Figures_SVG/Ellipse.svg'
 import Figure from '../assets/img/Figures_SVG/Figure'
@@ -10,17 +10,17 @@ const Buttons404 = (props) => {
 
         <div className='ErrorPage__buttons-area'>
             <div className='buttons-area__divFigure'>
-                <Link to="/">
+                <Link to="/DesenvolvimentoWeb/">
                     <Figure path={circle} text='Click me!' />
                 </Link>
             </div>
             <div className='buttons-area__divFigure1'>
-                <Link to="/">
+                <Link to="/DesenvolvimentoWeb/">
                     <Figure path={decaedro} text='Me!' />
                 </Link>
             </div>
             <div className='buttons-area__divFigure2'>
-                <Link to="/">
+                <Link to="/DesenvolvimentoWeb/">
                     <Figure path={props.rect} text='Or me!' />
                 </Link>
             </div>

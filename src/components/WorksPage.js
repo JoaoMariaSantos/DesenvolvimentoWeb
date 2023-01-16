@@ -31,7 +31,7 @@ const WorksPage = () => {
         <div className='workspage'>
             <ProjectsHeader />
             {projects && projects.map(project => {
-                return <Link key={project.id} to={`/work/${project.id}`}>{project.slug}</Link>
+                return <Link key={project.id} to={`/DesenvolvimentoWeb/work/${project.id}`}>{project.slug}</Link>
             })}
         </div>
     )
