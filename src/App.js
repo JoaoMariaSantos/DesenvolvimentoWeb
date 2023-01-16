@@ -6,6 +6,7 @@ import WorkPage from './components/WorkPage';
 import WorksPage from './components/WorksPage';
 import { Header } from './components/Header';
 import About from './components/About';
+import Contacts from './components/Contacts';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
             <About/>
           </Route>
           <Route path="/DesenvolvimentoWeb/contacts">
-            <h1>Estou no /contacts</h1>
+            <Contacts/>
           </Route>
           <Route path="*">
             <ErrorPage404 />

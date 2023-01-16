@@ -40,34 +40,28 @@
 
     }
 
-    .deca__ines {
+    // .deca__ines {
 
-        clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
-        background-image: url('../img/Profile_photos/ines.jpg');
-        // filter: invert(68%) sepia(52%) saturate(461%) hue-rotate(100deg) brightness(102%) contrast(92%); 
-        //get filters in https://codepen.io/sosuke/pen/Pjoqqp and adapt
-        filter: sepia(52%) saturate(461%/2) hue-rotate(100deg) brightness(102%) contrast(92%);
-    }
+    //     clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+    //     background-image: url('../img/Profile_photos/ines.jpg');
+    //     // filter: invert(68%) sepia(52%) saturate(461%) hue-rotate(100deg) brightness(102%) contrast(92%); 
+    //     //get filters in https://codepen.io/sosuke/pen/Pjoqqp and adapt
+    //     filter: sepia(52%) saturate(461%/2) hue-rotate(100deg) brightness(102%) contrast(92%);
+    // }
 
-    .circle__joao {
-        clip-path: circle(50% at 50% 50%);
-        background-image: url('../img/Profile_photos/joao.jpg');
-        // filter: invert(22%) sepia(68%) saturate(3476%) hue-rotate(236deg) brightness(95%) contrast(93%);
-        filter: sepia(68%) saturate(3476%) hue-rotate(236deg) brightness(95%) contrast(93%);
-    }
+    // .circle__joao {
+    //     clip-path: circle(50% at 50% 50%);
+    //     background-image: url('../img/Profile_photos/joao.jpg');
+    //     // filter: invert(22%) sepia(68%) saturate(3476%) hue-rotate(236deg) brightness(95%) contrast(93%);
+    //     filter: sepia(68%) saturate(3476%) hue-rotate(236deg) brightness(95%) contrast(93%);
+    // }
 
-    .triangle__ze {
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        background-image: url('../img/Profile_photos/ze.jpg');
-        // filter: invert(35%) sepia(40%) saturate(3869%) hue-rotate(333deg) brightness(97%) contrast(98%);
-        filter: invert(35%) sepia(40%) saturate(3869%) hue-rotate(333deg) brightness(97%) contrast(98%);
-    }
-
-    .about__title {
-        font-family: $headings;
-        text-decoration: underline solid black 2px;
-        text-underline-offset: 20px;
-    }
+    // .triangle__ze {
+    //     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    //     background-image: url('../img/Profile_photos/ze.jpg');
+    //     // filter: invert(35%) sepia(40%) saturate(3869%) hue-rotate(333deg) brightness(97%) contrast(98%);
+    //     filter: invert(35%) sepia(40%) saturate(3869%) hue-rotate(333deg) brightness(97%) contrast(98%);
+    // }
 
     .about__all-text {
         height: max-content;
