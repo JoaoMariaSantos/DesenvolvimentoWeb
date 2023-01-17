@@ -12,7 +12,7 @@ const WorksPage = () => {
                 return res.json()
             })
             .then(data => {
-                // console.log(data)
+                console.log(data)
                 setProjects(data)
 
                 for (let i = 0; i < data.length; i++) {
@@ -20,7 +20,7 @@ const WorksPage = () => {
                     } else {
                         projectIds.push(data[i].id)
                         let str = data[i].slug.split('-').join(' ');
-                        itemList.push([str,data[i]])
+                        itemList.push([str, data[i]])
                     }
                 }
                 setItemList(itemList)
@@ -52,25 +52,29 @@ const WorksPage = () => {
     return (
         <div className='workspage'>
             <div className='projectfilter'>
-                <h2 className='projectfilter__title'>Projects</h2>
+                <h2 className='projectfilter__title text--headings text--underline'>Projects</h2>
                 <div className='projectfilter__header'>
                     <ul className='projectfilter__unordered-list'>
                         <li className='projectfilter__list-item'>
                             <p className='projectfilter__lable'>Categories</p>
                             <ul className='projectfilter__list-options'>
-                                <li>+ All</li>
-                                <li>+ Branding</li>
-                                <li>+ Illustrations</li>
-                                <li>+ Movies</li>
+                                <label htmlFor="all"><li><input type="radio" name="category" value="all" id="all" /> All</li></label>
+                                <label htmlFor="3d"><li><input type="radio" name="category" value="3d" id="3d" /> 3D</li></label>
+                                <label htmlFor="graphic_design"><li><input type="radio" name="category" value="graphic_design" id="graphic_design" /> Graphic Design</li></label>
+                                <label htmlFor="motion_design"><li><input type="radio" name="category" value="motion_design" id="motion_design" /> Motion Design</li></label>
+                                <label htmlFor="new_media"><li><input type="radio" name="category" value="new_media" id="new_media" /> New Media</li></label>
+                                <label htmlFor="photography"><li><input type="radio" name="category" value="photography" id="photography" /> Photography</li></label>
+                                <label htmlFor="video"><li><input type="radio" name="category" value="video" id="video" /> Video</li></label>
+                                <label htmlFor="web_design"><li><input type="radio" name="category" value="web_design" id="web_design" /> Web Design</li></label>
                             </ul>
                         </li>
                         <li className='projectfilter__list-item'>
                             <p className='projectfilter__lable'>Designer</p>
                             <ul className='projectfilter__list-options'>
-                                <li>+ All</li>
-                                <li>+ Inês</li>
-                                <li>+ João</li>
-                                <li>+ José</li>
+                                <label htmlFor="all2"><li><input type="radio" name="designer" value="all" id="all2" /> All</li></label>
+                                <label htmlFor="ines"><li><input type="radio" name="designer" value="ines" id="ines" /> Inês</li></label>
+                                <label htmlFor="joao"><li><input type="radio" name="designer" value="joao" id="joao" /> João</li></label>
+                                <label htmlFor="jose"><li><input type="radio" name="designer" value="jose" id="jose" /> José</li></label>
                             </ul>
                         </li>
                         <li>

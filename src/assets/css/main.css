@@ -433,6 +433,7 @@ main #main__background {
 }
 .projectfilter__title {
   font-weight: 300;
+  color: #2d2d2d;
 }
 .projectfilter__header {
   display: none;
@@ -470,14 +471,52 @@ main #main__background {
   transition: opacity 0.2s, visibility 0.2s;
   z-index: 20;
 }
+.projectfilter__list-options input[type=radio] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  -moz-appearance: none;
+       appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+.projectfilter__list-options input[type=radio]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #2d2d2d;
+  /* Windows High Contrast Mode */
+  background-color: #2d2d2d;
+}
+.projectfilter__list-options input[type=radio]:checked::before {
+  transform: scale(1);
+}
 .projectfilter__list-options li {
   margin: -2px 0 0 -2px;
-  width: 150px;
+  min-width: 150px;
   line-height: 1.7;
   color: grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }
 .projectfilter__list-options li:hover {
-  color: black;
+  color: #2d2d2d;
 }
 @-webkit-keyframes slide-in {
   0% {
@@ -532,7 +571,7 @@ main #main__background {
   padding: 0 40px;
 }
 .workspage .masonry {
-  margin-top: 20px;
+  margin-top: 40px;
   -moz-columns: 4;
        columns: 4;
   -moz-column-gap: 16px;
@@ -570,7 +609,10 @@ main #main__background {
   bottom: 0;
   left: 0;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.workspage .masonry .grid:hover::before {
+  background-color: rgba(80, 80, 80, 0.5);
 }
 .workspage .masonry .grid img {
   width: 100%;
