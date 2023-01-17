@@ -1,6 +1,29 @@
+
+// MOBILE
+// --> TODO: TO MOVE THE PROFILE FIGURES BEFORE THE 2ND PARAGRAPH OF TEXT
+window.addEventListener("resize", () => {
+    let motherContainer = document.querySelector('.about__all-text')
+    let profileImgs = document.querySelector('.about__figures')
+    let parentDiv = document.getElementsByClassName('about__maintext__container')
+    let afterElement = parentDiv.lastChild()
+
+    const mediaQuery = window.matchMedia('(max-width: 600px)')
+    if (mediaQuery.matches) {
+        //    console.log(afterElement)
+        parentDiv.insertBefore(profileImgs, afterElement)
+        afterElement.style.marginTop = '8vh'
+    }
+    else {
+        motherContainer.insertBefore(profileImgs, parentDiv.nextSibling)
+        afterElement.style.marginTop = 0
+    }
+
+
+    // motherContainer.style.height = profileImgs.getBoundingClientRect.bottom()
+    // console.log(profileImgs.getBoundingClientRect.bottom())
+})
+
 const About = () => {
-
-
     return (
         <div id='aboutPage'>
             <div>
@@ -38,30 +61,6 @@ const About = () => {
         </div>
     )
 }
-// MOBILE
-// --> TODO: TO MOVE THE PROFILE FIGURES BEFORE THE 2ND PARAGRAPH OF TEXT
-window.addEventListener("resize", () => {
-    let motherContainer = document.querySelector('.about__all-text')
-    let profileImgs = document.querySelector('.about__figures')
-    let parentDiv = document.querySelector('.about__maintext__container')
-    let afterElement = parentDiv.lastChild()
-
-    const mediaQuery = window.matchMedia('(max-width: 600px)')
-    if (mediaQuery.matches) {
-    //    console.log(afterElement)
-        parentDiv.insertBefore(profileImgs, afterElement)
-        afterElement.style.marginTop = '8vh'
-    }
-    else {
-        motherContainer.insertBefore(profileImgs, parentDiv.nextSibling)
-        afterElement.style.marginTop = 0
-    }
-
-
-// motherContainer.style.height = profileImgs.getBoundingClientRect.bottom()
-// console.log(profileImgs.getBoundingClientRect.bottom())
-
-})
 
 
 export default About

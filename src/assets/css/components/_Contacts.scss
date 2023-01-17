@@ -1,14 +1,14 @@
 #contactsPage {
-    margin-top: 7.5vh; //15vh;
+    // margin-top: 7.5vh; //15vh;
     line-height: 1.4;
     padding: 0 40px;
-    height: calc(100vh - 7.5vh);
+    height: 100%;
 
 
     .contacts__mainContent {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: repeat(1, calc(calc(100vh - 7.5vh)/4)); //1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(1, calc(calc(100% - 7.5vh)/4)); //1fr 1fr 1fr 1fr;
         column-gap: 20px;
         margin-top: -5vh; //2vh;
         padding-bottom: 2vh;
@@ -60,7 +60,7 @@
         }
 
         .circle__joao__container {
-            clip-path: circle(50% at 50% 50%);
+            clip-path: circle(48% at 50% 50%);
             background-color: $blue;
             // NOTE --> DESKTOP ABSOLUTE POSITION
             margin-left: auto;

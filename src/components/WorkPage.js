@@ -10,7 +10,7 @@ const WorkPage = () => {
 		await fetch(API_URL + 'projects/' + id)
 				.then(response => response.json())
 				.then(result => {
-                    
+                    // console.log(result)
                     setProject(result)
 				});
 	}
@@ -26,7 +26,7 @@ const WorkPage = () => {
                 <p>{project.slug}</p>
                 <img src={project.acf.image_0.url} alt="sup" />
                 <img src={project.acf.image_1.url} alt="sup" />
-                <img src={project.acf.image_1.url} alt="sup" />
+                <img src={project.acf.image_2.url} alt="sup" />
             </div>
             }
         </div>
