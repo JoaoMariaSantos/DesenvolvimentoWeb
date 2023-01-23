@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { API_URL } from '../api/api';
+import Carousel from './Carousel';
 
 const WorkPage = () => {
     const [project, setProject] = useState()
@@ -40,7 +41,7 @@ const WorkPage = () => {
                 } if (test === len) {
                     setNextProject(projectIds[0])
                     setPreviousProject(projectIds[test - 1])
-                } if(test < len && test > 0) {
+                } if (test < len && test > 0) {
                     setPreviousProject(projectIds[test - 1])
                     setNextProject(projectIds[test + 1])
                 }
@@ -57,29 +58,25 @@ const WorkPage = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    // console.log(projectIds)
-
+    // console.log(project.acf.author[0])
 
     return (
         <div className='workpage'>
             {project &&
                 <div>
-                    <div className="workpage__info">
-                        <p>{project.title.rendered}</p>
-                        <p>{project.content.rendered.replaceAll('<p>', '').replaceAll('</p>', '')}</p>
-                        <a href={`/DesenvolvimentoWeb/work/${previousProject}`}><i className="fa fa-chevron-left"></i> Previous project</a>
-                        <a href={`/DesenvolvimentoWeb/work/${nextProject}`}>Next project <i className="fa fa-chevron-right"></i></a>
+                    <div className="workpage__content">
+                        <div className="workpage__carousel">
+                            <Carousel img1={project.acf.image_0.url} img2={project.acf.image_1.url} img3={project.acf.image_2.url}/>
+                        </div>
+                        <div className="workpage__info">
+                            <p className="workpage__info-title text--headings">{project.title.rendered}</p>
+                            <p className="workpage__info-author">By: {project.acf.author[0]}</p>
+                            <p className="workpage__info-description">{project.content.rendered.replaceAll('<p>', '').replaceAll('</p>', '')}</p>
+                        </div>
                     </div>
-                    <div className="workpage__carousel">
-                        <div className='workpage__carousel-item'>
-                            <img src={project.acf.image_0.url} alt="image1" />
-                        </div>
-                        <div className='workpage__carousel-item'>
-                            <img src={project.acf.image_1.url} alt="image2" />
-                        </div>
-                        <div className='workpage__carousel-item'>
-                            <img src={project.acf.image_2.url} alt="image3" />
-                        </div>
+                    <div className="workpage__links">
+                        <a href={`/DesenvolvimentoWeb/work/${previousProject}`}><i className="fa fa-chevron-left"></i> Previous project</a>
+                        <a href={`/DesenvolvimentoWeb/work/${nextProject}`}> <p>Next project <i className="fa fa-chevron-right"></i></p></a>
                     </div>
                 </div>
             }

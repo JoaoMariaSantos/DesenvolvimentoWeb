@@ -1,3 +1,63 @@
 .workpage {
     padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        width: 100%;
+        min-height: 70vh;
+    }
+
+    &__info {
+        float: right;
+        padding: 40px;
+        width: 40vw;
+
+        &-title {
+            margin-bottom: 20px;
+        }
+
+        &-author {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .fa,
+    .fas {
+        margin-top: 2px;
+    }
+
+    &__links {
+        position: fixed;
+        width: 100vw;
+        height: 125px;
+        padding: 40px;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            border: 2px solid $black;
+            text-decoration: none;
+            background: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: $black;
+            height: 3em;
+            width: auto;
+            padding: 0 2em 0 2em;
+
+            &:hover {
+                height: 3.2em;
+                width: auto;
+                font-size: 1.0em;
+                -webkit-box-shadow: 0 8px 6px -6px #161616;
+                box-shadow: 0 8px 6px -6px #161616;
+            }
+        }
+    }
 }
