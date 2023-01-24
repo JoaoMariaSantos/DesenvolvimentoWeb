@@ -35,7 +35,7 @@ function Carousel(props) {
     }, [index]);
 
     return (
-        <div className="carousel">
+        <div className="carousel__desktop">
             {cards && cards.map((item, i) => {
                 const indexLeft = mod(index - 1, cards.length);
                 const indexRight = mod(index + 1, cards.length);

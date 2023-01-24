@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { API_URL } from '../api/api';
 import Carousel from './Carousel';
+import CarouselMobile from './CarouselMobile';
 
 const WorkPage = () => {
     const [project, setProject] = useState()
@@ -73,6 +74,7 @@ const WorkPage = () => {
                     <div className="workpage__content">
                         <div className="workpage__carousel">
                             <Carousel img1={project.acf.image_0.url} img2={project.acf.image_1.url} img3={project.acf.image_2.url} />
+                            <CarouselMobile props={[project.acf.image_0.url,project.acf.image_1.url,project.acf.image_2.url]}/>
                         </div>
                         <div className="workpage__info">
                             <p className="workpage__info-title text--headings">{project.title.rendered}</p>
