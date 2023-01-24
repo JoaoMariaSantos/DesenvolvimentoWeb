@@ -6,6 +6,14 @@
     &__content {
         width: 100%;
         min-height: 70vh;
+
+
+        @media (max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     &__info {
@@ -20,6 +28,25 @@
         &-author {
             font-size: 25px;
             margin-bottom: 20px;
+        }
+
+        @media (max-width: 900px) {
+            width: 100%;
+            padding: 0px;
+        }
+    }
+
+    &__carousel {
+        width: 50%;
+
+        @media (max-width: 1200px) {
+            width: 100%;
+            height: 55vh;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 900px) {
+            display: none;
         }
     }
 
@@ -45,7 +72,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 8px;
             color: $black;
             height: 3em;
             width: auto;

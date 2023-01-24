@@ -12,7 +12,7 @@ const WorksPage = () => {
                 return res.json()
             })
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setProjects(data)
 
                 for (let i = 0; i < data.length; i++) {
@@ -97,7 +97,7 @@ const WorksPage = () => {
                         <img src={item[1].acf.image_0.url} alt="" />
                         <div className="grid__body">
                             <div className="relative">
-                                <a className="grid__link" href={`/DesenvolvimentoWeb/work/${item[1].id}`} > </a>
+                                <a className="grid__link" href={`/DesenvolvimentoWeb/#/work/${item[1].id}`} > </a>
                                 <h1 className="grid__title">{item[1].title.rendered}</h1>
                                 <p className="grid__author">{item[1].acf.author}</p>
                             </div>

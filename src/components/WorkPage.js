@@ -60,23 +60,31 @@ const WorkPage = () => {
 
     // console.log(project.acf.author[0])
 
+    const handleChange = () => {
+        setTimeout(() => {
+            document.location.reload();
+          }, 1);
+    }
+
     return (
         <div className='workpage'>
             {project &&
                 <div>
                     <div className="workpage__content">
                         <div className="workpage__carousel">
-                            <Carousel img1={project.acf.image_0.url} img2={project.acf.image_1.url} img3={project.acf.image_2.url}/>
+                            <Carousel img1={project.acf.image_0.url} img2={project.acf.image_1.url} img3={project.acf.image_2.url} />
                         </div>
                         <div className="workpage__info">
                             <p className="workpage__info-title text--headings">{project.title.rendered}</p>
                             <p className="workpage__info-author">By: {project.acf.author[0]}</p>
+                            {/* <p className="workpage__info-author">{project.acf.outside_url}</p>
+                            <p className="workpage__info-author">{project.acf.video_url}</p> */}
                             <p className="workpage__info-description">{project.content.rendered.replaceAll('<p>', '').replaceAll('</p>', '')}</p>
                         </div>
                     </div>
                     <div className="workpage__links">
-                        <a href={`/DesenvolvimentoWeb/work/${previousProject}`}><i className="fa fa-chevron-left"></i> Previous project</a>
-                        <a href={`/DesenvolvimentoWeb/work/${nextProject}`}> <p>Next project <i className="fa fa-chevron-right"></i></p></a>
+                        <a href={`/DesenvolvimentoWeb/#/work/${previousProject}`} onClick={handleChange}><i className="fa fa-chevron-left"></i> Previous</a>
+                        <a href={`/DesenvolvimentoWeb/#/work/${nextProject}`} onClick={handleChange}> <p>Next <i className="fa fa-chevron-right"></i></p></a>
                     </div>
                 </div>
             }

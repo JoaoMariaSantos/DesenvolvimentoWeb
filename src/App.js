@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Homepage from './components/Homepage'
 import Loading from './components/Loading'
 import ErrorPage404 from './components/ErrorPage404'
@@ -14,22 +14,22 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path="/DesenvolvimentoWeb/">
+          <Route exact path="/">
             <Homepage />
           </Route>
-          <Route path="/DesenvolvimentoWeb/loading">
+          <Route path="/loading">
             <Loading />
           </Route>
-          <Route path="/DesenvolvimentoWeb/works">
+          <Route path="/works">
             <WorksPage />
           </Route>
-          <Route path="/DesenvolvimentoWeb/work/:id">
+          <Route path="/work/:id">
             <WorkPage />
           </Route>
-          <Route path="/DesenvolvimentoWeb/about">
+          <Route path="/about">
             <About/>
           </Route>
-          <Route path="/DesenvolvimentoWeb/contacts">
+          <Route path="/contacts">
             <Contacts/>
           </Route>
           <Route path="*">
