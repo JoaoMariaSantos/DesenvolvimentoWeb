@@ -28,7 +28,7 @@ const Contacts = () => {
                         <div className='figure__inside triangle__ze__container'>
                             <div className="figure__inside triangle__ze"></div>
                             <h4 className="figure__name">José Antunes</h4>
-                            <p className="figure__email">zeFlex@gmail.com</p>
+                            <p className="figure__email">jprantunes2000@gmail.com</p>
                         </div>
                     {/* </div> */}
                     <div className="contacts__text">

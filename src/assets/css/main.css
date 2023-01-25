@@ -834,6 +834,7 @@ main #main__background {
   color: #333;
   border-radius: 5px;
   padding: 5px 15px;
+  margin-right: 5px;
   margin-bottom: 5px;
 }
 .workspage .mt-auto {
@@ -923,12 +924,23 @@ main #main__background {
   line-height: 1.4;
   padding: 0 40px;
   height: 100vh;
+  margin-bottom: 80vh;
+}
+@media (max-width: 600px) {
+  #aboutPage {
+    margin-bottom: 70vh;
+  }
+}
+@media (max-width: 450px) {
+  #aboutPage {
+    margin-bottom: 20vh;
+  }
 }
 #aboutPage .about__all-text {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  grid-template-columns: 3fr 1fr;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
   margin-top: 2vh;
 }
 #aboutPage .giant-circle {
@@ -957,20 +969,25 @@ main #main__background {
 #aboutPage .about__text {
   font-family: "Noto Sans";
   float: left;
+  font-size: 5vh;
+}
+#aboutPage .about__title {
+  font-weight: 300;
 }
 #aboutPage .about__figures {
   display: flex;
-  padding-top: 8%;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  float: right;
-  grid-column-start: 2;
-  grid-column-end: span 2;
+  flex-direction: column;
 }
 #aboutPage .about__figures * {
   width: auto;
   height: 33.3333333333%;
   aspect-ratio: 1;
+}
+@media (max-width: 900px) {
+  #aboutPage .about__figures {
+    flex-direction: column;
+    height: 100vh;
+  }
 }
 #aboutPage .about__giant-circle {
   margin-top: 8vh;
@@ -978,15 +995,16 @@ main #main__background {
   padding: 0;
   width: 100%;
   height: auto;
-  aspect-ratio: 1;
 }
 #aboutPage .about__giant-circle .giant-circle {
   position: absolute;
   aspect-ratio: 1;
-  min-height: 190px;
+  min-width: 300px;
+  min-height: 300px;
   max-width: 1720px;
   max-height: 1720px;
-  height: 50%;
+  height: 50vw;
+  width: 50vw;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   color: #f6f6f4;
@@ -1002,6 +1020,7 @@ main #main__background {
   transform: translateY(-50%);
   top: 50%;
   font-family: "Noto Sans";
+  font-size: 4vw;
 }
 
 @media screen and (max-width: 600px) {
@@ -1016,17 +1035,9 @@ main #main__background {
     width: 72.5%;
   }
   #aboutPage .about__figures {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     flex-wrap: nowrap;
-    justify-content: end;
-    padding-top: 0;
-    margin-left: 0;
-    flex-shrink: auto;
-  }
-  #aboutPage .about__figures * {
-    margin-left: 5px;
-    height: calc(33.3333333333vw - 30px);
   }
   #aboutPage .deca__ines,
 #aboutPage .circle__joao,
@@ -1130,6 +1141,9 @@ main #main__background {
 #contactsPage .contacts__text .contacts__subtitle {
   font-weight: 500;
 }
+#contactsPage .contacts__title {
+  font-weight: 300;
+}
 
 @media screen and (max-device-width: 540px), screen and (max-width: 540px) {
   #contactsPage .contacts__mainContent {
@@ -1174,17 +1188,14 @@ main #main__background {
   -webkit-clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
           clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
   background-image: url("../img/Profile_photos/ines.jpg");
-  filter: sepia(52%) saturate(230.5%) hue-rotate(100deg) brightness(102%) contrast(92%);
 }
 #aboutPage .circle__joao, #contactsPage .circle__joao {
   -webkit-clip-path: circle(50% at 50% 50%);
           clip-path: circle(50% at 50% 50%);
   background-image: url("../img/Profile_photos/joao.jpg");
-  filter: sepia(68%) saturate(3476%) hue-rotate(236deg) brightness(95%) contrast(93%);
 }
 #aboutPage .triangle__ze, #contactsPage .triangle__ze {
   -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
           clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background-image: url("../img/Profile_photos/ze.jpg");
-  filter: invert(35%) sepia(40%) saturate(3869%) hue-rotate(333deg) brightness(97%) contrast(98%);
 }/*# sourceMappingURL=main.css.map */

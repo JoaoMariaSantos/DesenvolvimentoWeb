@@ -34,6 +34,8 @@ const WorksPage = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    console.log(itemList)
+
     const [filteredList, setFilteredList] = new useState(itemList);
 
     const filterBySearch = (event) => {

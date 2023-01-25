@@ -31,7 +31,7 @@ function Carousel(props) {
             setIndex((index + 1) % cards.length);
             // console.log(index);
         }, 2500);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [index]);
 
     return (
@@ -51,12 +51,16 @@ function Carousel(props) {
                 } else className = "card";
 
                 return (
-                    <img
-                        key={item.id}
-                        className={className}
-                        src={item.image}
-                        alt="Comic"
-                    ></img>
+                    <div>
+                        <img
+                            key={item.id}
+                            className={className}
+                            src={item.image}
+                            alt="img"
+                            data-bs-toggle="modal"
+                            data-bs-target={`#image${item.id}`}
+                        ></img>
+                    </div>
                 );
             })}
         </div>

@@ -3,14 +3,24 @@
     line-height: 1.4;
     padding: 0 40px;
     height: 100vh;
+    margin-bottom: 80vh;
     // display: flex;
+
+    @media (max-width: 600px) {
+        margin-bottom: 70vh;
+      }
+
+      @media (max-width: 450px) {
+        margin-bottom: 20vh;
+      }
+
 
 
     .about__all-text {
         display: grid;
         // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 20px;
+        grid-template-columns: 3fr 1fr;
+        column-gap: 40px;
         margin-top: 2vh;
     }
 
@@ -71,23 +81,27 @@
         font-family: $body;
         float: left;
         // flex: 1;
+        font-size: 5vh;
+    }
+
+    .about__title {
+        font-weight: 300;
     }
 
     .about__figures {
         display: flex;
-        padding-top: 8%;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        float: right;
-        // flex: 1;
-        grid-column-start: 2;
-        grid-column-end: span 2;
+        flex-direction: column;
 
         * {
             width: auto;
             height: calc(100%/3); //50%;
             aspect-ratio: 1;
         }
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+            height: 100vh;
+          }
     }
 
     .about__giant-circle {
@@ -97,7 +111,7 @@
         // width: 50%;
         width: 100%;
         height: auto;
-        aspect-ratio: 1;
+        // aspect-ratio: 1;
         // left: 50%;
         // min-width: 390px;
         // min-height: 390px;
@@ -110,10 +124,13 @@
             position: absolute;
             aspect-ratio: 1;
             // height: -webkit-fill-available;
-            min-height: 190px;
+            min-width: 300px;
+            min-height: 300px;
             max-width: 1720px;
             max-height: 1720px;
-            height: 50%;
+            $size:  50vw;
+            height: $size;
+            width: $size;
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 50%;
             color: $white;
@@ -133,6 +150,7 @@
                 transform: translateY(-50%);
                 top: 50%;
                 font-family: $body;
+                font-size: 4vw;
             }
         }
 
@@ -160,18 +178,9 @@
         }
 
         .about__figures {
-            width: 100%;
-            height: auto;
+            width: auto;
+            height: 100%;
             flex-wrap: nowrap;
-            justify-content: end;
-            padding-top: 0;
-            margin-left: 0;
-            flex-shrink: auto;
-
-            * {
-                margin-left: 5px;
-                height: calc(100vw / 3 - 30px);
-            }
         }
 
 
