@@ -5,6 +5,28 @@ const WorksPage = () => {
     const [projects, setProjects] = useState();
     const [projectIds, setProjectIds] = useState([]);
     const [itemList, setItemList] = useState([]);
+    // let author = document.querySelectorAll(".grid__author")
+
+    // function getBackgroundColor() {
+    //     const colors = [
+    //         '#f53d4c',
+    //         '#4ce59f',
+    //         '#474AEB'
+    //     ]
+    //     let color;
+    //     author.forEach((i) => {
+    //         console.log(i.innerText)
+    //         if (i.innerText == "Inês Pereira") {
+    //            color = colors[1]
+    //         } else if (i.innerText == "José Antunes") {
+    //             color = colors[0]
+    //         } else {
+    //             color = colors[2]
+    //         }
+    //     })
+    //   return color
+    //     // return colors[Math.floor(Math.random() * colors.length)];
+    // }
 
     useEffect(() => {
         fetch(API_URL + 'projects')
@@ -59,7 +81,7 @@ const WorksPage = () => {
         var updatedList = [...itemList];
         // Include all elements which includes the search query
         updatedList = updatedList.filter((item) => {
-            if(event.target.value !== "All") {
+            if (event.target.value !== "All") {
                 let filter = item[2][0].toLowerCase().indexOf(query.toLowerCase()) !== -1;
                 return filter
             } else {
@@ -77,7 +99,7 @@ const WorksPage = () => {
         var updatedList = [...itemList];
         // Include all elements which includes the search query
         updatedList = updatedList.filter((item) => {
-            if(event.target.value !== "All") {
+            if (event.target.value !== "All") {
                 return item[3].toLowerCase().indexOf(query.toLowerCase()) !== -1;
             } else {
                 return updatedList = [...itemList];
@@ -87,7 +109,29 @@ const WorksPage = () => {
         setFilteredList(updatedList);
         // console.log(filteredList)
     }
+    function getClipPath() {
+        const clipPathOptions = [
+            'polygon(50% 0%, 0% 100%, 100% 100%)',
+            'circle(50% at 50% 50%)',
+            'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
+            'polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%)',
+            'polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)',
+            'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
+        ]
 
+        return clipPathOptions[Math.floor(Math.random() * clipPathOptions.length)];
+    }
+    let blcks = document.querySelectorAll(" img")
+    blcks.forEach(a => {
+        a.style.clipPath = getClipPath();
+        // a.addEventListener("mouseover", () => {
+        // a.src = ""
+        // a.style.backgroundColor = getBackgroundColor()
+        // // })
+        // a.addEventListener("mouseover", () => {
+        //     a.style.backgroundColor = "none"
+        // })
+    })
     return (
         <div className='workspage'>
             <div className='projectfilter'>
@@ -131,23 +175,43 @@ const WorksPage = () => {
             </div>
             <div className="masonry">
                 {filteredList.map((item, index) => {
+                    // let itemsPerDesigner;
+
                     // console.log(item)
                     // return <p key={index}>{item[1].slug}</p>
+                    //  if (item[1].acf.author == 'Inês Pereira'){ itemsPerDesigner.push(filteredList[index]
+                    //  console.log(itemsPerDesigner)}
+                    // let itemsPerDesigner = document.querySelectorAll('.grid')
+                    // const designerList = []
+                    // itemsPerDesigner.forEach((item, index) => {
+                    // console.log('oooo  ' + index)
+                    // for (var i = 0; i < itemsPerDesigner.length; i++) {
+                    //     if (itemsPerDesigner[i].textContent == 'Inês Pereira') {
+                    //       designerList = itemsPerDesigner[i];
+                    //       break;
+                    //     }
+                    //   }
+                    // console.log('oooo  ' + index)
+
+                    // })
+                    // console.log(item[1].acf.author == 'Inês Pereira', index);
                     return <div key={index} className="grid">
                         <img src={item[1].acf.image_0.url} alt="" />
+
                         <div className="grid__body">
                             <div className="relative">
                                 <a className="grid__link" href={`/DesenvolvimentoWeb/#/work/${item[1].id}`} > </a>
                                 <h1 className="grid__title">{item[1].title.rendered}</h1>
                                 <p className="grid__author">{item[1].acf.author}</p>
                             </div>
-                            <div className="mt-auto" >
-                                {
-                                    item[1].acf.categories.map((category, index) => {
-                                        return <span key={index} className="grid__tag">{category}</span>
-                                    })
-                                }
-                            </div>
+
+                        </div>
+                        <div className="mt-auto" >
+                            {
+                                item[1].acf.categories.map((category, index) => {
+                                    return <span key={index} className="grid__tag">{category}</span>
+                                })
+                            }
                         </div>
                     </div>
                 })}
@@ -155,5 +219,4 @@ const WorksPage = () => {
         </div>
     )
 }
-
 export default WorksPage
