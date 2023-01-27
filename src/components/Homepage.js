@@ -54,9 +54,13 @@ const Homepage = () => {
 
     proj.style.clipPath = getClipPath();
 
-    proj.style.backgroundImage = 'url(' + getImage() + ')';
+    const projectIndex = Math.floor(Math.random() * projects.length);
+
+    proj.style.backgroundImage = 'url(' + getImage(projectIndex) + ')';
 
     coloredDiv.style.backgroundColor = getBackgroundColor();
+
+    proj.dataset.projURL = getURL(projectIndex);
 
     proj.append(coloredDiv);
     dragElement(proj);
@@ -86,10 +90,15 @@ const Homepage = () => {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-  function getImage() { //TO-DO
-    const images = itemList 
+  function getImage(projectIndex) { //TO-DO
+    const images = itemList
     // return 'https://via.placeholder.com/150';
-    return images[Math.floor(Math.random() * images.length)][0];
+    //return images[Math.floor(Math.random() * images.length)][0];
+    return images[projectIndex][0];
+  }
+
+  function getURL(projectIndex) {
+    return `/DesenvolvimentoWeb/#/work/${projectIds[projectIndex]}`;
   }
 
   function projectsSetZIndex() {
@@ -100,6 +109,8 @@ const Homepage = () => {
   }
 
   function dragElement(elmnt) {
+    let startTime;
+    let startCursorPos = {x: 0, y: 0};
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (document.getElementById(elmnt.id + "header")) {
       // if present, the header is where you move the DIV from:
@@ -110,11 +121,15 @@ const Homepage = () => {
     }
 
     function dragMouseDown(e) {
+      startTime = Date.now();
+
       projectsSetZIndex();
       elmnt.style.zIndex = '1';
       e = e || window.event;
       e.preventDefault();
       // get the mouse cursor position at startup:
+      startCursorPos.x = e.clientX;
+      startCursorPos.y = e.clientY;
       pos3 = e.clientX;
       pos4 = e.clientY;
       document.onmouseup = closeDragElement;
@@ -135,15 +150,18 @@ const Homepage = () => {
       elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
     }
 
-    function closeDragElement() {
+    function closeDragElement(e) {
+      e = e || window.event;
       // stop moving when mouse button is released:
       document.onmouseup = null;
       document.onmousemove = null;
+      // if quick drag go to project page
+      if(Date.now() - startTime < 200 && Math.abs(startCursorPos.x - e.clientX) < 1 && Math.abs(startCursorPos.y - e.clientY) < 1) window.location.href = elmnt.dataset.projURL;
     }
   }
 
   return (
-    <div>
+    <div id='homepage__wrapper'>
       <main>
         <div id='main__background' onClick={addProject}></div>
         <div id='homepage__projects'>
