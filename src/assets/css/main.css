@@ -306,9 +306,11 @@ body {
             align-items: center;
   }
 }
+
 .homepage {
   overflow: hidden;
 }
+
 .homepage__title {
   font-size: 40px;
 }
@@ -329,18 +331,22 @@ $pickedColor: nth($colors, $key);
   scrollbar-width: none;
   overflow: visible;
 }
+
 #homepage__wrapper::-webkit-scrollbar {
   display: none;
 }
+
 #homepage__wrapper main {
   position: relative;
   display: block;
   height: calc(100vh - 110px);
 }
+
 #homepage__wrapper main #homepage__projects {
   width: 100%;
   height: 100%;
 }
+
 #homepage__wrapper main #homepage__projects .homepage__projects__project {
   position: absolute;
   width: 200px;
@@ -354,6 +360,7 @@ $pickedColor: nth($colors, $key);
   overflow: hidden;
   cursor: pointer;
 }
+
 #homepage__wrapper main #homepage__projects .homepage__projects__project div {
   width: 100%;
   height: 100%;
@@ -362,11 +369,13 @@ $pickedColor: nth($colors, $key);
   -webkit-transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 #homepage__wrapper main #homepage__projects .homepage__projects__project div:hover {
   opacity: 0;
   -webkit-transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 #homepage__wrapper main #main__background {
   position: absolute;
   width: 100%;
@@ -1051,7 +1060,7 @@ $pickedColor: nth($colors, $key);
   position: relative;
 }
 
-.workspage .masonry .grid img {
+.workspage .masonry .grid .image__container img {
   width: 80%;
   margin-top: 35px;
   margin-bottom: 30px;
@@ -1062,9 +1071,17 @@ $pickedColor: nth($colors, $key);
   border-radius: 5px;
 }
 
-.workspage .masonry .grid img:hover {
-  -webkit-transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.workspage .masonry .grid .image__container .coloredDiv {
+  width: 80%;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table-cell;
+  left: 10%;
+  aspect-ratio: 1;
+  top: 0;
+  position: absolute;
+  opacity: 1;
 }
 
 .workspage .masonry .grid__title {
@@ -1115,6 +1132,37 @@ $pickedColor: nth($colors, $key);
   border-radius: 5px;
   padding: 15px 15px;
   margin: 15px;
+}
+
+.workspage .disappears {
+  -webkit-animation: formGoesTransparent 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          animation: formGoesTransparent 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+@-webkit-keyframes formGoesTransparent {
+  0% {
+    background-color: initial;
+  }
+  50% {
+    background-color: revert;
+  }
+  100% {
+    background-color: revert;
+  }
+}
+
+@keyframes formGoesTransparent {
+  0% {
+    background-color: initial;
+  }
+  50% {
+    background-color: revert;
+  }
+  100% {
+    background-color: revert;
+  }
 }
 
 .search-text {

@@ -5,28 +5,7 @@ const WorksPage = () => {
     const [projects, setProjects] = useState();
     const [projectIds, setProjectIds] = useState([]);
     const [itemList, setItemList] = useState([]);
-    // let author = document.querySelectorAll(".grid__author")
-
-    // function getBackgroundColor() {
-    //     const colors = [
-    //         '#f53d4c',
-    //         '#4ce59f',
-    //         '#474AEB'
-    //     ]
-    //     let color;
-    //     author.forEach((i) => {
-    //         console.log(i.innerText)
-    //         if (i.innerText == "Inês Pereira") {
-    //            color = colors[1]
-    //         } else if (i.innerText == "José Antunes") {
-    //             color = colors[0]
-    //         } else {
-    //             color = colors[2]
-    //         }
-    //     })
-    //   return color
-    //     // return colors[Math.floor(Math.random() * colors.length)];
-    // }
+    let colors, color;
 
     useEffect(() => {
         fetch(API_URL + 'projects')
@@ -72,8 +51,28 @@ const WorksPage = () => {
         });
         // Trigger render with updated values
         setFilteredList(updatedList);
-        // console.log(filteredList)
     };
+
+    function getBackgroundColor(showingItem) {
+        colors = [
+            '#f53d4c', //ze
+            '#4ce59f', //ines
+            '#474AEB' //joao
+        ]
+        if (showingItem.id === "José Antunes") {
+            color = colors[0]
+            // console.log('Zéééééé ' + color)
+        }
+        else if (showingItem.id === 'Inês Pereira') {
+            color = colors[1]
+            // console.log('INÊÊÊS ' + color)
+        }
+        else {
+            color = colors[2]
+            // console.log('jOÃÃO ' + color)
+        }
+        return color
+    }
 
     const onChangeCategory = (event) => {
         const query = event.target.value;
@@ -121,17 +120,34 @@ const WorksPage = () => {
 
         return clipPathOptions[Math.floor(Math.random() * clipPathOptions.length)];
     }
-    let blcks = document.querySelectorAll(" img")
+
+    let blcks = document.querySelectorAll("img")
+    let coloredDiv = document.querySelectorAll(".coloredDiv")
+    let pathList = [];
+    let path;
+    let index = 0;
     blcks.forEach(a => {
-        a.style.clipPath = getClipPath();
-        // a.addEventListener("mouseover", () => {
-        // a.src = ""
-        // a.style.backgroundColor = getBackgroundColor()
-        // // })
-        // a.addEventListener("mouseover", () => {
-        //     a.style.backgroundColor = "none"
-        // })
+        path = getClipPath()
+        a.style.clipPath = path;
+        pathList.push(path);
     })
+    console.log('path  ' + path)
+    coloredDiv.forEach(a => {
+        a.style.clipPath = pathList[index];
+        index++
+        a.style.backgroundColor = getBackgroundColor(a)
+    })
+    coloredDiv.forEach(b => {
+        b.addEventListener("mouseover", () => {
+            b.classList.add('disappears')
+            // console.log('entra')
+        })
+        b.addEventListener("mouseleave", () => {
+            b.classList.remove('disappears')
+            // console.log('sai')
+        })
+    })
+
     return (
         <div className='workspage'>
             <div className='projectfilter'>
@@ -175,34 +191,17 @@ const WorksPage = () => {
             </div>
             <div className="masonry">
                 {filteredList.map((item, index) => {
-                    // let itemsPerDesigner;
-
-                    // console.log(item)
-                    // return <p key={index}>{item[1].slug}</p>
-                    //  if (item[1].acf.author == 'Inês Pereira'){ itemsPerDesigner.push(filteredList[index]
-                    //  console.log(itemsPerDesigner)}
-                    // let itemsPerDesigner = document.querySelectorAll('.grid')
-                    // const designerList = []
-                    // itemsPerDesigner.forEach((item, index) => {
-                    // console.log('oooo  ' + index)
-                    // for (var i = 0; i < itemsPerDesigner.length; i++) {
-                    //     if (itemsPerDesigner[i].textContent == 'Inês Pereira') {
-                    //       designerList = itemsPerDesigner[i];
-                    //       break;
-                    //     }
-                    //   }
-                    // console.log('oooo  ' + index)
-
-                    // })
-                    // console.log(item[1].acf.author == 'Inês Pereira', index);
                     return <div key={index} className="grid">
-                        <img src={item[1].acf.image_0.url} alt="" />
+                        <div className="image__container">
+                            <img src={item[1].acf.image_0.url} alt="" />
+                            <div className="coloredDiv" id={item[1].acf.author}></div>
 
+                        </div>
                         <div className="grid__body">
                             <div className="relative">
                                 <a className="grid__link" href={`/DesenvolvimentoWeb/#/work/${item[1].id}`} > </a>
                                 <h1 className="grid__title">{item[1].title.rendered}</h1>
-                                <p className="grid__author">{item[1].acf.author}</p>
+                                <p className="grid__author" id={item[1].id}>{item[1].acf.author}</p>
                             </div>
 
                         </div>
