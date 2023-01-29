@@ -33,8 +33,6 @@ const Homepage = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  console.log(itemList)
-
   function addProject() {
     const container = document.querySelector('#homepage__projects');
 
@@ -160,7 +158,7 @@ const Homepage = () => {
     }
   }
 
-  return (
+  return (  
     <div id='homepage__wrapper'>
       <main>
         <div id='main__background' onClick={addProject}></div>

@@ -34,10 +34,28 @@
             margin-bottom: 20px;
         }
 
+        &-description {
+            margin-bottom: 20px;
+        }
+
         @media (max-width: 900px) {
             width: 100%;
             padding: 0px;
             margin-top: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: $black;
+            margin-right: 16px;
+
+            &:hover{
+                color: rgb(109, 109, 109);
+            }
+
+            i {
+                font-size: 16px;
+            }
         }
     }
 
@@ -87,7 +105,6 @@
             padding: 0 2em 0 2em;
 
             &:hover {
-                height: 3.2em;
                 width: auto;
                 font-size: 1.0em;
                 -webkit-box-shadow: 0 8px 6px -6px #161616;

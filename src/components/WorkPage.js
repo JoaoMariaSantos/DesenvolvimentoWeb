@@ -15,7 +15,7 @@ const WorkPage = () => {
         await fetch(API_URL + 'projects/' + id)
             .then(response => response.json())
             .then(result => {
-                // console.log(result)
+                console.log(result)
                 setProject(result)
             });
     }
@@ -67,6 +67,27 @@ const WorkPage = () => {
           }, 1);
     }
 
+    let videoLink = document.querySelector('.workpage__info .videoLink');
+    
+    if(videoLink == null) videoLink = document.querySelector('.workpage__info .videoLink');
+    else if(!isALink(videoLink.href)) videoLink.style.display = 'none';
+    else console.log(videoLink.href);
+
+    let webLink = document.querySelector('.workpage__info .webLink');
+
+    if(webLink == null) webLink = document.querySelector('.workpage__info .webLink');
+    else if(!isALink(webLink.href)) webLink.style.display = 'none';
+    else console.log(webLink.href);
+
+    function isALink(url){
+        if(url === 'https://www.youtube.com' || url === 'https://www.google.com/') return false;
+        else if(url.includes('localhost')) return false;
+        else if(!url) return false;
+        else if(url.length < 7) return false;
+
+        return true;
+    }
+
     return (
         <div className='workpage'>
             {project &&
@@ -82,6 +103,8 @@ const WorkPage = () => {
                             {/* <p className="workpage__info-author">{project.acf.outside_url}</p>
                             <p className="workpage__info-author">{project.acf.video_url}</p> */}
                             <p className="workpage__info-description">{project.content.rendered.replaceAll('<p>', '').replaceAll('</p>', '')}</p>
+                            <a href={project.acf.outside_url} className='webLink'><i className='fa fa-globe'></i></a>
+                            <a href={project.acf.video_url} className='videoLink'><i className='fa fa-play'></i></a>
                         </div>
                     </div>
                     <div className="workpage__links">

@@ -4,6 +4,7 @@
     height: 50px;
     align-items: center;
     justify-content: space-between;
+    cursor: default;
 
     &__title {
         font-weight: 300;
@@ -33,6 +34,7 @@
             border-radius: 5px;
             padding: 10px;
             transition: background 0.1s;
+            cursor: pointer;
 
             &:hover {
                 .projectfilter__list-options {

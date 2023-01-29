@@ -121,23 +121,22 @@ const WorksPage = () => {
         return clipPathOptions[Math.floor(Math.random() * clipPathOptions.length)];
     }
 
+    let imageContainers = document.querySelectorAll('.image__container');
     let blcks = document.querySelectorAll("img")
     let coloredDiv = document.querySelectorAll(".coloredDiv")
     let pathList = [];
     let path;
     let index = 0;
-    blcks.forEach(a => {
+    imageContainers.forEach(a => {
         path = getClipPath()
         a.style.clipPath = path;
         pathList.push(path);
     })
     console.log('path  ' + path)
     coloredDiv.forEach(a => {
-        a.style.clipPath = pathList[index];
-        index++
         a.style.backgroundColor = getBackgroundColor(a)
     })
-    coloredDiv.forEach(b => {
+    /* coloredDiv.forEach(b => {
         b.addEventListener("mouseover", () => {
             b.classList.add('disappears')
             // console.log('entra')
@@ -146,7 +145,7 @@ const WorksPage = () => {
             b.classList.remove('disappears')
             // console.log('sai')
         })
-    })
+    }) */
 
     return (
         <div className='workspage'>
@@ -208,6 +207,7 @@ const WorksPage = () => {
                         <div className="mt-auto" >
                             {
                                 item[1].acf.categories.map((category, index) => {
+                                    if(index < item[1].acf.categories.length - 1) category = category + ', ';
                                     return <span key={index} className="grid__tag">{category}</span>
                                 })
                             }
