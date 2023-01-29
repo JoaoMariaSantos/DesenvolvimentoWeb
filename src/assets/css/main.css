@@ -831,7 +831,9 @@ $pickedColor: nth($colors, $key);
   margin-left: auto;
   margin-right: auto;
   display: table-cell;
-  /*aspect-ratio: 1;*/
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
   pointer-events: none;
 }
