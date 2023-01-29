@@ -103,8 +103,8 @@ const WorkPage = () => {
                             {/* <p className="workpage__info-author">{project.acf.outside_url}</p>
                             <p className="workpage__info-author">{project.acf.video_url}</p> */}
                             <p className="workpage__info-description">{project.content.rendered.replaceAll('<p>', '').replaceAll('</p>', '')}</p>
-                            <a href={project.acf.outside_url} className='webLink'><i className='fa fa-globe'></i></a>
-                            <a href={project.acf.video_url} className='videoLink'><i className='fa fa-play'></i></a>
+                            <a href={project.acf.outside_url} target="blank" className='webLink'><i className='fa fa-globe'></i></a>
+                            <a href={project.acf.video_url} target="blank" className='videoLink'><i className='fa fa-play'></i></a>
                         </div>
                     </div>
                     <div className="workpage__links">
